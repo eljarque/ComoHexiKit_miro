@@ -1,0 +1,3 @@
+/* 
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Access-Control-Allow-Origin: *

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import data from './data/data.json';
+import data from './data/data.json'; // Asegúrate de que este archivo contiene los datos con las URLs correctas
 
 const { board } = miro;
 
@@ -22,7 +22,16 @@ const App = (): JSX.Element => {
       width: fixedSize,
     });
 
-    console.log(`SVG añadido al canvas en (${x}, ${y})`);
+    console.log(`Imagen añadida al canvas en (${x}, ${y})`);
+  };
+
+  // Configurar datos para arrastrar
+  const handleDragStart = (e: React.DragEvent, url: string) => {
+    e.dataTransfer.setData(
+      'application/json',
+      JSON.stringify({ url })
+    );
+    console.log(`Drag iniciado para ${url}`);
   };
 
   // Manejar soltura de elementos en el canvas
@@ -30,29 +39,19 @@ const App = (): JSX.Element => {
     const handleDrop = async (event: any) => {
       console.log('Evento de Drop:', event);
 
-      // Verificar si hay datos válidos
       const dropData = event.data.items[0]?.data;
       if (!dropData) {
         console.error('No se encontraron datos en el evento de drop');
         return;
       }
 
-      let parsedData;
-      try {
-        parsedData = JSON.parse(dropData);
-      } catch (error) {
-        console.error('Error al parsear los datos del drop:', error);
-        return;
-      }
-
-      const { url } = parsedData;
+      const { url } = JSON.parse(dropData);
 
       if (!url) {
         console.error('No se encontró URL en los datos del evento');
         return;
       }
 
-      // Posición del drop en el canvas
       const { x, y } = event;
 
       // Crear la imagen en el canvas
@@ -69,20 +68,11 @@ const App = (): JSX.Element => {
     // Registrar el evento de drop
     board.ui.on('drop', handleDrop);
 
-    // Limpiar el evento al desmontar el componente
+    // Limpiar al desmontar el componente
     return () => {
       board.ui.off('drop', handleDrop);
     };
   }, []);
-
-  // Configurar datos para arrastrar
-  const handleDragStart = (e: React.DragEvent, url: string) => {
-    e.dataTransfer.setData(
-      'application/json',
-      JSON.stringify({ url })
-    );
-    console.log(`Drag iniciado para ${url}`);
-  };
 
   return (
     <div className="tt_main_container">
