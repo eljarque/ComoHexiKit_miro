@@ -36,11 +36,12 @@ export class TeamType implements TeamElementInterface {
       case TEAM_ENUM.StreamAligned:
         return {
           borderStyle: 'normal',
-          borderColor: '#FFD966',
+          borderColor: '#000',
           fillColor: '#FFEDB8',
           textAlign: 'center',
           textAlignVertical: 'middle',
-          fontSize: 17
+          fontSize: 17,
+          
         };
       case TEAM_ENUM.Enabling:
         return {
@@ -124,6 +125,7 @@ export class TeamType implements TeamElementInterface {
         return ComplicatedSubsystemIcon;
     }
   }
+  
 
   getClassName(): string {
     switch (this.teamEnum) {

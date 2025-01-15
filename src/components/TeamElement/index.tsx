@@ -1,25 +1,25 @@
 import React from 'react';
-
 import { TeamElementInterface } from '../../team-logic/team-static';
-import SVG from 'react-inlinesvg';
 
-type TeamElementProps = { teamElement: TeamElementInterface; createTeamShape: Function; setDetailText: Function };
+export interface TeamElementProps {
+  teamElement: TeamElementInterface;
+  onClick?: () => void;
+}
 
-const TeamElement = ({ teamElement, createTeamShape, setDetailText }: TeamElementProps): JSX.Element => {
+const TeamElement: React.FC<TeamElementProps> = ({ teamElement, onClick }) => {
   return (
     <div
-      className={'miro-draggable draggable-item draggable-team ' + teamElement.getClassName()}
-      key={teamElement.getTeamEnum()}
-      draggable={false}
-      title={teamElement.getName()}
-      onClick={() => createTeamShape(teamElement)}
-      onMouseEnter={() => {
-        if (setDetailText != undefined) {
-          setDetailText(teamElement.getTeamEnum());
+      className="team-element"
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          onClick && onClick();
         }
       }}
     >
-      <SVG className='icon' src={teamElement.getIcon()} />
+      {teamElement.getName()}
     </div>
   );
 };

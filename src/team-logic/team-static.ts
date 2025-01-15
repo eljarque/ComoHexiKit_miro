@@ -20,6 +20,7 @@ export interface TeamElementStyleInterface {
   fontSize?: number | undefined;
   textAlign?: TextAlign | undefined;
   textAlignVertical?: TextAlignVertical | undefined;
+  backgroundColor?: string | undefined;
 }
 
 export interface TeamElementInterface {

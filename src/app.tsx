@@ -1,119 +1,115 @@
-import React, { useState, useEffect } from 'react';
-import { DropEvent } from '@mirohq/websdk-types';
+import React, { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-
-import { TeamFactory } from './team-logic/team-factory';
-
-import { TeamType } from './team-logic/team-type';
-import { TeamSupplementary } from './team-logic/team-supplementary';
-import { TEAM_ENUM, TeamElementInterface } from './team-logic/team-static';
-import { TeamInteraction } from './team-logic/team-interaction';
-import { TeamOther } from './team-logic/team-other';
-
-import teamInfo from './team-text/team-info';
-
-import TeamElement from './components/TeamElement';
-import DetailsSection from './components/DetailsSection';
+import data from './data/data.json';
 
 const { board } = miro;
 
 const App = (): JSX.Element => {
-  const [dropRegistered, setDropRegistered] = useState(false);
-  const [description, setDescription] = useState<string>('');
-  const teamFactory = new TeamFactory();
+  // Manejar clic en un elemento
+  const handleClick = async (url: string) => {
+    const fixedSize = 150;
 
-  const drop = async (e: DropEvent) => {
-    console.log('START DROP');
-    const { x, y, target } = e;
-    const teamElement = teamFactory.getTeamElementFromClassList(target.classList);
+    // Obtener la posición central del viewport
+    const viewport = await board.viewport.get();
+    const x = viewport.x + viewport.width / 2;
+    const y = viewport.y + viewport.height / 2;
 
-    await createTeamShape(teamElement, { x, y });
-    console.log('END DROP');
-  };
-
-  useEffect(() => {
-    if (!dropRegistered) {
-      console.log('REGISTER DROP');
-      setDropRegistered(true);
-      board.ui.on('drop', drop);
-    }
-  }, [dropRegistered, setDropRegistered]);
-
-  const createTeamShape = async (teamElement: TeamElementInterface, pos?: { x: number; y: number }) => {
-    const teamShapeSize = teamElement.getShapeSize();
-    if (!pos) {
-      const viewport = await board.viewport.get();
-      pos = {
-        x: viewport.x + viewport.width / 2 - teamShapeSize.width / 2,
-        y: viewport.y + viewport.height / 2 - teamShapeSize.height / 2
-      };
-    }
-
-    await board.createShape({
-      x: pos.x,
-      y: pos.y,
-      style: teamElement.getStyle(),
-      shape: teamElement.getShape(),
-      width: teamShapeSize.width,
-      height: teamShapeSize.height,
-      rotation: 0,
-      content: teamElement.getName()
+    // Crear la imagen en el canvas
+    await board.createImage({
+      x,
+      y,
+      url,
+      width: fixedSize,
     });
+
+    console.log(`SVG añadido al canvas en (${x}, ${y})`);
   };
 
-  const setDetailText = (teamEnum: TEAM_ENUM) => {
-    console.log('setDetailText!');
-    setDescription(teamInfo[teamEnum]);
+  // Manejar soltura de elementos en el canvas
+  useEffect(() => {
+    const handleDrop = async (event: any) => {
+      console.log('Evento de Drop:', event);
+
+      // Verificar si hay datos válidos
+      const dropData = event.data.items[0]?.data;
+      if (!dropData) {
+        console.error('No se encontraron datos en el evento de drop');
+        return;
+      }
+
+      let parsedData;
+      try {
+        parsedData = JSON.parse(dropData);
+      } catch (error) {
+        console.error('Error al parsear los datos del drop:', error);
+        return;
+      }
+
+      const { url } = parsedData;
+
+      if (!url) {
+        console.error('No se encontró URL en los datos del evento');
+        return;
+      }
+
+      // Posición del drop en el canvas
+      const { x, y } = event;
+
+      // Crear la imagen en el canvas
+      await board.createImage({
+        x,
+        y,
+        url,
+        width: 150,
+      });
+
+      console.log(`Elemento añadido al canvas en (${x}, ${y})`);
+    };
+
+    // Registrar el evento de drop
+    board.ui.on('drop', handleDrop);
+
+    // Limpiar el evento al desmontar el componente
+    return () => {
+      board.ui.off('drop', handleDrop);
+    };
+  }, []);
+
+  // Configurar datos para arrastrar
+  const handleDragStart = (e: React.DragEvent, url: string) => {
+    e.dataTransfer.setData(
+      'application/json',
+      JSON.stringify({ url })
+    );
+    console.log(`Drag iniciado para ${url}`);
   };
 
   return (
-    <div className='tt_main_container'>
-      <h4 className='sub-title'>Team types:</h4>
-      <h5 className='sub-title'>Fundamental:</h5>
-      <div className='team-types'>
-        {TeamType.TeamEnums.map((teamEnum) => (
-          <TeamElement
-            teamElement={teamFactory.getTeamElement(teamEnum)}
-            key={teamEnum}
-            createTeamShape={createTeamShape}
-            setDetailText={setDetailText}
-          />
-        ))}
-      </div>
-      <h5 className='sub-title'>Supplementary:</h5>
-      <div className='team-supplementary'>
-        {TeamSupplementary.TeamEnums.map((teamEnum) => (
-          <TeamElement
-            teamElement={teamFactory.getTeamElement(teamEnum)}
-            key={teamEnum}
-            createTeamShape={createTeamShape}
-            setDetailText={setDetailText}
-          />
-        ))}
-      </div>
-      <h4 className='sub-title'>Team interactions:</h4>
-      <div className='team-interactions'>
-        {TeamInteraction.TeamEnums.map((teamEnum) => (
-          <TeamElement
-            teamElement={teamFactory.getTeamElement(teamEnum)}
-            key={teamEnum}
-            createTeamShape={createTeamShape}
-            setDetailText={setDetailText}
-          />
-        ))}
-      </div>
-      <div className='team-other'>
-        <h4 className='sub-title'>Flow of change:</h4>
-        {TeamOther.TeamEnums.map((teamEnum) => (
-          <TeamElement
-            teamElement={teamFactory.getTeamElement(teamEnum)}
-            key={teamEnum}
-            createTeamShape={createTeamShape}
-            setDetailText={setDetailText}
-          />
-        ))}
-      </div>
-      <DetailsSection description={description} />
+    <div className="tt_main_container">
+      <h4 className="sub-title">Categories:</h4>
+      {data.map((category) => (
+        <div key={category.category}>
+          <h5 className="category-title">{category.category}</h5>
+          <div className="category-elements">
+            {category.elements.map((element) => (
+              <div
+                key={element.name}
+                className="element"
+                onClick={() => handleClick(element.url)}
+                draggable="true"
+                onDragStart={(e) => handleDragStart(e, element.url)}
+              >
+                <img
+                  src={element.url}
+                  alt={element.name}
+                  className="element-image"
+                  style={{ width: '100px', height: '100px', cursor: 'pointer' }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

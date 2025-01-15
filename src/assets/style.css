@@ -79,3 +79,18 @@ svg.icon {
   height: unset;
   width: unset;
 }
+
+/* new CSS */
+
+.category-elements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* Espacio entre elementos */
+  justify-content: flex-start; /* Alineación al inicio */
+}
+
+.element {
+  display: inline-block;
+  cursor: pointer;
+}
+
