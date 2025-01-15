@@ -4,13 +4,13 @@
     "elements": [
       {
         "name": "User Story Mapping",
-        "description": "Map your user stories for a better understanding of processes.",
-        "url": "https://res.cloudinary.com/dt4vox7py/image/upload/v1736785949/User_Story_Mapping_msreb2.svg"
+        "description": "A tool for mapping user stories",
+        "url": "/assets/images/User_Story_Mapping.svg"
       },
       {
-        "name": "US Writing Workshop",
-        "description": "Workshop for writing user stories effectively.",
-        "url": "https://res.cloudinary.com/dt4vox7py/image/upload/v1736785948/US_WritingW_apfsax.svg"
+        "name": "US Writing",
+        "description": "User story writing guidelines",
+        "url": "/assets/images/US_WritingW.svg"
       }
     ]
   },
@@ -19,13 +19,13 @@
     "elements": [
       {
         "name": "Value Proposition Canvas",
-        "description": "Canvas for defining value propositions.",
-        "url": "https://res.cloudinary.com/dt4vox7py/image/upload/v1736785912/Value_Proposition_Canvas_mslcu4.svg"
+        "description": "Define your value propositions",
+        "url": "/assets/images/Value_Proposition_Canvas.svg"
       },
       {
         "name": "Product Strategy Canvas",
-        "description": "Canvas for defining product strategies.",
-        "url": "https://res.cloudinary.com/dt4vox7py/image/upload/v1736785911/Product_Strategy_Canvas_b4btvq.svg"
+        "description": "Plan your product strategy",
+        "url": "/assets/images/Product_Strategy_Canvas.svg"
       }
     ]
   },
@@ -33,23 +33,16 @@
     "category": "artifacts",
     "elements": [
       {
-        "name": "Vector Artifact",
-        "description": "Vector representation of an artifact.",
-        "url": "https://res.cloudinary.com/dt4vox7py/image/upload/v1736785425/Vector_duwxtw.svg"
+        "name": "Vector",
+        "description": "A simple vector example",
+        "url": "/assets/images/Vector.svg"
       },
       {
-        "name": "User Story Artifact",
-        "description": "Artifact representing a user story.",
-        "url": "https://res.cloudinary.com/dt4vox7py/image/upload/v1736785424/user_story_xb12gx.svg"
+        "name": "User Story",
+        "description": "A user story artifact",
+        "url": "/assets/images/user_story.svg"
       }
     ]
-  },
-  {
-    "category": "makers",
-    "elements": []
-  },
-  {
-    "category": "roles",
-    "elements": []
   }
 ]
+
