@@ -14,6 +14,8 @@ p i {
 
 .tt_main_container {
   padding: 20px;
+  overflow-y: scroll;
+  max-height: 90vh;
 }
 
 h5.sub-title {
@@ -85,7 +87,7 @@ svg.icon {
 .category-elements {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px; /* Espacio entre elementos */
+  gap: 5px; /* Espacio entre elementos */
   justify-content: flex-start; /* Alineación al inicio */
 }
 
@@ -95,22 +97,13 @@ svg.icon {
 }
 
 /* spinner */
-
-.spinner-overlay {
-  position: absolute; /* Para que se superponga */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center;    /* Centrar verticalmente */
-  background: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
-  border-radius: 8px; /* Opcional, redondear esquinas */
-  z-index: 10; /* Asegurar que esté sobre la imagen */
+.element {
+  position: relative;
+  overflow: hidden;
 }
 
 .spinner {
+  position: absolute;
   border: 4px solid rgba(0, 0, 0, 0.1); /* Fondo del spinner */
   border-top: 4px solid #3498db;       /* Color animado del spinner */
   border-radius: 50%;                  /* Forma circular */
@@ -127,3 +120,5 @@ svg.icon {
     transform: rotate(360deg);
   }
 }
+
+

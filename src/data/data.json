@@ -1,47 +1,89 @@
 [
   {
-    "category": "Constructors process",
+    "category": "Constructors Process",
     "elements": [
-      {
-        "name": "User Story Mapping",
-        "description": "A tool for mapping user stories",
-        "url": "/assets/images/User_Story_Mapping.svg"
-      },
-      {
-        "name": "US Writing",
-        "description": "User story writing guidelines",
-        "url": "/assets/images/US_WritingW.svg"
-      }
+      { "name": "C4 Modelling", "description": "C4 modelling tool", "url": "/assets/images/C4_Modelling_dwcmeb.svg" },
+      { "name": "Context Mapping", "description": "Context mapping tool", "url": "/assets/images/Context_Mapping_aomwdt.svg" },
+      { "name": "Domain Message Flow", "description": "Domain message flow tool", "url": "/assets/images/Domain_Message_Flow_oy71mm.svg" },
+      { "name": "Domain ST", "description": "Domain ST tool", "url": "/assets/images/Domain_ST_enq41c.png" },
+      { "name": "EVS Big Picture", "description": "EVS big picture tool", "url": "/assets/images/EVS_BigPicture_hfu89o.svg" },
+      { "name": "EVS Process Modelling", "description": "EVS process modelling tool", "url": "/assets/images/EVS_Process_Modelling_hhu1wx.svg" },
+      { "name": "EVS Software D", "description": "EVS software tool", "url": "/assets/images/EVS_Software_D_lokpxl.svg" },
+      { "name": "Example Mapping", "description": "Example mapping tool", "url": "/assets/images/Example_Mapping_skgwvd.svg" },
+      { "name": "Feature Mapping", "description": "Feature mapping tool", "url": "/assets/images/Feature_Mapping_yzcgow.png" },
+      { "name": "Impact Mapping", "description": "Impact mapping tool", "url": "/assets/images/Impact_Mapping_krclrp.svg" },
+      { "name": "MDL Modelling", "description": "MDL modelling tool", "url": "/assets/images/MDL_Modelling_qdopzy.svg" },
+      { "name": "Scenario Casting", "description": "Scenario casting tool", "url": "/assets/images/Scenario_casting_qjfd6w.svg" },
+      { "name": "Scenario Writing", "description": "Scenario writing tool", "url": "/assets/images/Scenario_Writing_W_qzvtd4.svg" },
+      { "name": "US Writing", "description": "User story writing guidelines", "url": "/assets/images/US_WritingW_apfsax.svg" },
+      { "name": "User Story Mapping", "description": "A tool for mapping user stories", "url": "/assets/images/User_Story_Mapping_msreb2.svg" }
     ]
-  },
+  },  
   {
     "category": "Constructors Machine",
     "elements": [
-      {
-        "name": "Value Proposition Canvas",
-        "description": "Define your value propositions",
-        "url": "/assets/images/Value_Proposition_Canvas.svg"
-      },
-      {
-        "name": "Product Strategy Canvas",
-        "description": "Plan your product strategy",
-        "url": "/assets/images/Product_Strategy_Canvas.svg"
-      }
+      { "name": "Value Proposition Canvas", "description": "Define your value propositions", "url": "/assets/images/Value_Proposition_Canvas_mslcu4.svg" },
+      { "name": "Product Strategy Canvas", "description": "Plan your product strategy", "url": "/assets/images/Product_Strategy_Canvas_b4btvq.svg" },
+      { "name": "Machine Learning Canvas", "description": "Machine learning tool", "url": "/assets/images/Machine_Learning_Canvas_iwbav4.svg" },
+      { "name": "Data Product Canvas", "description": "Data product tool", "url": "/assets/images/Data_Product_Canvas_oxpjgw.svg" },
+      { "name": "Core Domain", "description": "Core domain tool", "url": "/assets/images/Core_Domain_zd8vun.svg" },
+      { "name": "Business Model Canvas", "description": "Business model planning", "url": "/assets/images/Business_Model_Canvas_va9loo.svg" },
+      { "name": "Bounded Context Canvas", "description": "Bounded context tool", "url": "/assets/images/Bounded_Context_Canvas_vmtg7g.svg" },
+      { "name": "Aggregate Canvas", "description": "Aggregate modelling tool", "url": "/assets/images/Agreggate_canvas_ssx0ks.svg" }
     ]
-  },
+  },  
   {
     "category": "Artifacts",
     "elements": [
-      {
-        "name": "Vector",
-        "description": "A simple vector example",
-        "url": "/assets/images/Vector.svg"
-      },
-      {
-        "name": "User Story",
-        "description": "A user story artifact",
-        "url": "/assets/images/user_story.svg"
-      }
+      { "name": "Acceptance Criteria", "description": "Define acceptance criteria", "url": "/assets/images/acceptance_criteria_wvph4d.svg" },
+      { "name": "Aggregate", "description": "Aggregate modelling", "url": "/assets/images/agregate_zjxzxf.svg" },
+      { "name": "Bounded Context", "description": "Bounded context modelling", "url": "/assets/images/Bounded_Context_sy5l3a.svg" },
+      { "name": "Business Rule", "description": "Define business rules", "url": "/assets/images/business_rule_phuspj.svg" },
+      { "name": "C4 Code Diagram", "description": "Code-level diagramming", "url": "/assets/images/C4_code_diagram_jw3cag.svg" },
+      { "name": "C4 Component Diagram", "description": "Component-level diagramming", "url": "/assets/images/c4_component_diagram_fshxcd.svg" },
+      { "name": "C4 Container Diagram", "description": "Container-level diagramming", "url": "/assets/images/C4_container_diagram_snw0b2.svg" },
+      { "name": "C4 System Context Diagram", "description": "System context diagramming", "url": "/assets/images/C4_System_Context_Diagram_foxuoy.svg" },
+      { "name": "Customer Journey", "description": "Map customer journeys", "url": "/assets/images/Customer_Journey_tkj6hh.svg" },
+      { "name": "Domain Scenario", "description": "Define domain scenarios", "url": "/assets/images/Domain_Scenario_vbljhe.svg" },
+      { "name": "Domain Story", "description": "Tell domain stories", "url": "/assets/images/Domain_Story_cbkwdm.svg" },
+      { "name": "Example", "description": "Example scenario", "url": "/assets/images/Example_fveswv.svg" },
+      { "name": "Executable Specification", "description": "Executable specs", "url": "/assets/images/executable_specification_mfz6g6.svg" },
+      { "name": "Vector", "description": "Vector diagram", "url": "/assets/images/Vector_duwxtw.svg" }
+    ]
+  },  
+  {
+    "category": "Makers",
+    "elements": [
+      { "name": "Attention", "description": "Attention tool", "url": "/assets/images/atention_mroyqb.svg" },
+      { "name": "Bidirectional", "description": "Bidirectional flows", "url": "/assets/images/bidirectional_gvy7i8.svg" },
+      { "name": "Dash", "description": "Dashboard tool", "url": "/assets/images/Dash_wlrl22.svg" },
+      { "name": "Direction", "description": "Direction flow tool", "url": "/assets/images/direction_gqemah.svg" },
+      { "name": "Linked", "description": "Linked items", "url": "/assets/images/linked_ftfwlf.svg" },
+      { "name": "Stop", "description": "Stop signal", "url": "/assets/images/stop_lrxfsr.svg" }
+    ]
+  },
+  {
+    "category": "Roles",
+    "elements": [
+      { "name": "Architect", "description": "Architect role", "url": "/assets/images/architech_hdhzda.svg" },
+      { "name": "Developer", "description": "Developer role", "url": "/assets/images/developer_hudver.svg" },
+      { "name": "Domain Expert", "description": "Domain expert role", "url": "/assets/images/Domain_expert_s5kwjc.svg" },
+      { "name": "Facilitator", "description": "Facilitator role", "url": "/assets/images/Facilitator_vqp0yz.svg" },
+      { "name": "Generic", "description": "Generic role", "url": "/assets/images/generic_w5te3m.svg" },
+      { "name": "Modeler", "description": "Modeler role", "url": "/assets/images/Modeler_n44lyn.svg" },
+      { "name": "PM", "description": "Project manager role", "url": "/assets/images/PM_dgx67j.svg" },
+      { "name": "QA", "description": "Quality assurance role", "url": "/assets/images/QA_gd8vhq.svg" },
+      { "name": "UX", "description": "User experience role", "url": "/assets/images/UX_szz7m3.svg" }
+    ]
+  },
+  {
+    "category": "Frameworks",
+    "elements": [
+      { "name": "BDD", "description": "Behaviour-driven development", "url": "/assets/images/BDD_e2slbx.svg" },
+      { "name": "Cynefin", "description": "Cynefin framework", "url": "/assets/images/Cynefin_a0p7cd.svg" },
+      { "name": "Design Thinking", "description": "Design thinking process", "url": "/assets/images/Design_Thinking_t40yux.svg" },
+      { "name": "Scrum", "description": "Agile framework", "url": "/assets/images/Scrum_srxvof.svg" },
+      { "name": "Kanban", "description": "Kanban process", "url": "/assets/images/Kanban_oaxtje.svg" }
     ]
   }
 ]
