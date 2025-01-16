@@ -1,6 +1,6 @@
 [
   {
-    "category": "constructors process",
+    "category": "Constructors process",
     "elements": [
       {
         "name": "User Story Mapping",
@@ -15,7 +15,7 @@
     ]
   },
   {
-    "category": "constructors machine",
+    "category": "Constructors Machine",
     "elements": [
       {
         "name": "Value Proposition Canvas",
@@ -30,7 +30,7 @@
     ]
   },
   {
-    "category": "artifacts",
+    "category": "Artifacts",
     "elements": [
       {
         "name": "Vector",
@@ -45,4 +45,3 @@
     ]
   }
 ]
-
