@@ -12,7 +12,7 @@ const App = (): JSX.Element => {
     setLoadingElement(url);
 
     try {
-      const fixedSize = category === 'Makers' || category === 'Roles' ? 100 : 150;
+      const fixedSize = category === 'Makers' || category === 'Roles' ? 80 : 150;
 
       const viewport = await board.viewport.get();
       const x = viewport.x + viewport.width / 2;
