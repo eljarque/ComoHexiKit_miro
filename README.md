@@ -13,7 +13,7 @@ Trying to align with the templates available in [this repo](https://github.com/T
 
 # How it works
 
-You can try the official plugin directly from [Miro Marketplace](https://miro.com/marketplace/team-topologies/).
+You can try the official plugin directly from [Miro Marketplace](https://miro.com/marketplace/team-topologies/)...
 
 Setup the Team Topologies icon from your library
 
